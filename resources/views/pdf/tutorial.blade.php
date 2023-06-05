@@ -34,12 +34,13 @@
         </thead>
         <tbody>
             @foreach ($cars as $car)
-            <tr>
-                <td>{{$car['id']}}</td>
-                <td>{{$car['name']}}</td> 
-                <td><img src="{{$car['logo']}}" width="120px" height="90px" alt=""></td>
-            </tr>  
-            
+            {{-- @if ($loop->last==false) --}}
+                <tr>
+                    <td>{{$car['id']}}</td>
+                    <td>{{$car['name']}}</td> 
+                    <td><img src="{{$car['logo']}}" width="120px" height="90px" alt=""></td>
+                </tr>  
+            {{-- @endif             --}}
             @endforeach                        
         </tbody>
     </table>
