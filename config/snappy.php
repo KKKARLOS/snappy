@@ -36,20 +36,28 @@ return [
     'pdf' => [
         'enabled' => true,
         //'binary'  => env('WKHTML_PDF_BINARY', '/usr/local/bin/wkhtmltopdf'),
-        //'binary' => (env('APP_ENV')=='local') ? env('WKHTML_PDF_BINARY','"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"') : env('WKHTML_PDF_BINARY_PRO','/usr/local/bin/wkhtmltopdf'),
+        //'binary' => env('APP_ENV')=='local' ? env('WKHTML_PDF_BINARY') : env('WKHTML_PDF_BINARY_PRO'),
         'binary'  => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"',     
         'timeout' => false,
-        'options' => [],
+        'options' => [
+            'enable-local-file-access' => true,
+            'orientation'   => 'landscape',
+            'encoding'      => 'UTF-8'
+        ],
         'env'     => [],
     ],
     
     'image' => [
         'enabled' => true,
         //'binary'  => env('WKHTML_IMG_BINARY', '/usr/local/bin/wkhtmltoimage'),
-        //'binary' => (env('APP_ENV')=='local') ? env('WKHTML_IMG_BINARY','"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage"') : env('WKHTML_IMG_BINARY_PRO','/usr/local/bin/wkhtmltoimage '),
+        //'binary' => env('APP_ENV')=='local' ? env('WKHTML_IMG_BINARY') : env('WKHTML_IMG_BINARY_PRO'),
         'binary'  => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage.exe"',
         'timeout' => false,
-        'options' => [],
+        'options' => [
+            'enable-local-file-access' => true,
+            'orientation'   => 'landscape',
+            'encoding'      => 'UTF-8'
+        ],
         'env'     => [],
     ],
 
